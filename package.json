@@ -1,0 +1,22 @@
+{
+  "name": "svg-logomaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash301994/SVG-LOGOMAKER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash301994/SVG-LOGOMAKER/issues"
+  },
+  "homepage": "https://github.com/akash301994/SVG-LOGOMAKER#readme"
+}
