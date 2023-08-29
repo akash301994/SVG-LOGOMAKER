@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require("inquirer");
-const logoGenerator = require('./lib/shapes');
+const {Triangle, Circle, Square} = require('./lib/shapes');
 
 const userInput = [
     {
@@ -28,7 +28,7 @@ const userInput = [
 ]; 
 
 function writeToFile(filename, data) {
-  const logo = logoGenerator.generateLogo(data);
+  const logo = data.render();
   fs.writeFile(filename, logo, (err) => {
     if (err) {
       console.error('Error writing to file:', err);
@@ -43,7 +43,15 @@ function writeToFile(filename, data) {
     inquirer
       .prompt(userInput)
       .then((data) => {
-        writeToFile('./examples/logo.svg', data);
+        let shape;
+        if (data.shape === 'circle') {
+            shape = new Circle (data.characters, data.textColor, data.shapeColor)
+        } else if (data.shape === 'triangle') {
+          shape = new Triangle (data.characters, data.textColor, data.shapeColor)
+        } else {
+          shape = new Square (data.characters, data.textColor, data.shapeColor)
+        }
+        writeToFile('./examples/logo.svg', shape);
       })
       .catch((error) => {
         console.error('An error occurred:', error);
