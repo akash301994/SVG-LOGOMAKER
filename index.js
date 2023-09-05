@@ -1,3 +1,5 @@
+//require all neccessary files to be imported
+
 const fs = require('fs');
 const inquirer = require("inquirer");
 const {Triangle, Circle, Square} = require('./lib/shapes');
@@ -27,6 +29,8 @@ const userInput = [
 
 ]; 
 
+//geting data from render
+
 function writeToFile(filename, data) {
   const logo = data.render();
   fs.writeFile(filename, logo, (err) => {
@@ -38,6 +42,8 @@ function writeToFile(filename, data) {
   });
 }
 
+
+//getting all data from classes, structuring them in a if/else. 
   
   function init() {
     inquirer
@@ -58,6 +64,6 @@ function writeToFile(filename, data) {
       });
   }
   
-  init();    
+  init();
 
 
